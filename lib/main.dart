@@ -1,5 +1,8 @@
 //flutter run -d chrome でchrome動作
 
+import 'dart:html';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:checklist/TestPage1.dart';
 
@@ -12,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'チェックリストあ',
+      title: 'チェックリスト',
       theme: ThemeData(
         //これはアプリケーションのテーマです。
         //
@@ -105,54 +108,138 @@ class _MyHomePageState extends State<MyHomePage> {
           //これは、列が垂直であるためです（交差軸は水平になります）。
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // Card(
+            //     child: Container(
+            //   padding: const EdgeInsets.all(1),
+            //   child: Text(
+            //     'test',
+            //     style: TextStyle(fontSize: 16),
+            //   ),
+            // )),
+
+            // Align(
+            //   //2
+            //   alignment: Alignment.topRight,
+            //   child: Icon(
+            //     Icons.brightness_1,
+            //     color: Colors.red,
+            //   ),
+            // )
+
             Card(
-              child: ElevatedButton(
-                onPressed: _incrementBackCounter,
-                child: Text("チェックリスト", style: TextStyle(fontSize: 80)),
-              ),
-            ),
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              '押しなさい',
-            ),
-            TextButton(
-              onPressed: _incrementBackCounter,
-              child: Text("裏でカウント"),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Icon(
-                  Icons.favorite,
-                  color: Colors.pink,
-                  size: 24.0,
+                margin: const EdgeInsets.only(top: 30, bottom: 30),
+                color: Color(0xffffffe0),
+                elevation: 3,
+                shadowColor: Color(0xff555555),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
                 ),
-                Icon(
-                  Icons.audiotrack,
-                  color: Colors.green,
-                  size: 30.0,
+                child: Container(
+                    margin: const EdgeInsets.all(10.0),
+                    width: 400,
+                    height: 100,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Icon(
+                            Icons.check,
+                            color: Colors.green,
+                            size: 30.0,
+                          ),
+                          TextButton(
+                            onPressed: _incrementBackCounter,
+                            child: FittedBox(
+                              fit: BoxFit.fitWidth,
+                              child: Text(
+                                "チェックリストをやる",
+                                style: TextStyle(fontSize: 32),
+                              ),
+                            ),
+                          ),
+                        ]))),
+
+            Card(
+                margin: const EdgeInsets.only(top: 30, bottom: 30),
+                color: Color(0xffffffe0),
+                elevation: 3,
+                shadowColor: Color(0xff555555),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
                 ),
-                Icon(
-                  Icons.beach_access,
-                  color: Colors.blue,
-                  size: 36.0,
-                ),
-              ],
-            ),
-            TextButton(
-                onPressed: () => {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) {
-                        return TestPage1();
-                      }))
-                    },
-                child: Text("進む", style: TextStyle(fontSize: 80)))
+                child: Container(
+                    margin: const EdgeInsets.all(10.0),
+                    width: 400,
+                    height: 100,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Icon(
+                            Icons.settings,
+                            color: Colors.green,
+                            size: 30.0,
+                          ),
+                          TextButton(
+                            onPressed: _incrementBackCounter,
+                            child: FittedBox(
+                              fit: BoxFit.fitWidth,
+                              child: Text(
+                                "設定を変更する",
+                                style: TextStyle(fontSize: 32),
+                              ),
+                            ),
+                          ),
+                        ]))),
+
+            // Container(
+            //     child: row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //         children: []))
+
+            //Text("チェックリスト", style: TextStyle(fontSize: 80)),
+            //),
+            //),
+            // Text(
+            //   'You have pushed the button this many times:',
+            // ),
+            // Text(
+            //   '$_counter',
+            //   style: Theme.of(context).textTheme.headline4,
+            // ),
+            // Text(
+            //   '押しなさい',
+            // ),
+            // TextButton(
+            //   onPressed: _incrementBackCounter,
+            //   child: Text("裏でカウント"),
+            // ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //   children: [
+            //     Icon(
+            //       Icons.favorite,
+            //       color: Colors.pink,
+            //       size: 24.0,
+            //     ),
+            //     Icon(
+            //       Icons.audiotrack,
+            //       color: Colors.green,
+            //       size: 30.0,
+            //     ),
+            //     Icon(
+            //       Icons.beach_access,
+            //       color: Colors.blue,
+            //       size: 36.0,
+            //     ),
+            //   ],
+            // ),
+            // TextButton(
+            //     onPressed: () => {
+            //           Navigator.of(context)
+            //               .push(MaterialPageRoute(builder: (context) {
+            //             return TestPage1();
+            //           }))
+            //         },
+            //     child: Text("進む", style: TextStyle(fontSize: 80)))
           ],
         ),
       ),
