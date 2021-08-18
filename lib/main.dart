@@ -108,87 +108,73 @@ class _MyHomePageState extends State<MyHomePage> {
           //これは、列が垂直であるためです（交差軸は水平になります）。
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Card(
-            //     child: Container(
-            //   padding: const EdgeInsets.all(1),
-            //   child: Text(
-            //     'test',
-            //     style: TextStyle(fontSize: 16),
-            //   ),
-            // )),
-
-            // Align(
-            //   //2
-            //   alignment: Alignment.topRight,
-            //   child: Icon(
-            //     Icons.brightness_1,
-            //     color: Colors.red,
-            //   ),
-            // )
+            Card(
+              margin: const EdgeInsets.only(top: 30, bottom: 30),
+              color: Color(0xffffffe0),
+              elevation: 10,
+              shadowColor: Color(0xff555555),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: InkWell(
+                  splashColor: Colors.blue.withAlpha(30),
+                  borderRadius: BorderRadius.circular(30),
+                  onTap: () {
+                    print('Card tapped.');
+                  },
+                  child: Container(
+                      margin: const EdgeInsets.all(10.0),
+                      width: 400,
+                      height: 100,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Icon(
+                              Icons.check,
+                              color: Colors.green,
+                              size: 60.0,
+                            ),
+                            Text(
+                              "チェックリストをやる",
+                              style:
+                                  TextStyle(fontSize: 32, color: Colors.black),
+                            ),
+                          ]))),
+            ),
 
             Card(
-                margin: const EdgeInsets.only(top: 30, bottom: 30),
-                color: Color(0xffffffe0),
-                elevation: 3,
-                shadowColor: Color(0xff555555),
-                shape: RoundedRectangleBorder(
+              margin: const EdgeInsets.only(top: 30, bottom: 30),
+              color: Color(0xffffffe0),
+              elevation: 10,
+              shadowColor: Color(0xff555555),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: InkWell(
+                  splashColor: Colors.blue.withAlpha(30),
                   borderRadius: BorderRadius.circular(30),
-                ),
-                child: Container(
-                    margin: const EdgeInsets.all(10.0),
-                    width: 400,
-                    height: 100,
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Icon(
-                            Icons.check,
-                            color: Colors.green,
-                            size: 30.0,
-                          ),
-                          TextButton(
-                            onPressed: _incrementBackCounter,
-                            child: FittedBox(
-                              fit: BoxFit.fitWidth,
-                              child: Text(
-                                "チェックリストをやる",
-                                style: TextStyle(fontSize: 32),
-                              ),
+                  onTap: () {
+                    print('Card tapped.');
+                  },
+                  child: Container(
+                      margin: const EdgeInsets.all(10.0),
+                      width: 400,
+                      height: 100,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Icon(
+                              Icons.settings,
+                              color: Colors.green,
+                              size: 60.0,
                             ),
-                          ),
-                        ]))),
-
-            Card(
-                margin: const EdgeInsets.only(top: 30, bottom: 30),
-                color: Color(0xffffffe0),
-                elevation: 3,
-                shadowColor: Color(0xff555555),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Container(
-                    margin: const EdgeInsets.all(10.0),
-                    width: 400,
-                    height: 100,
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Icon(
-                            Icons.settings,
-                            color: Colors.green,
-                            size: 30.0,
-                          ),
-                          TextButton(
-                            onPressed: _incrementBackCounter,
-                            child: FittedBox(
-                              fit: BoxFit.fitWidth,
-                              child: Text(
-                                "設定を変更する",
-                                style: TextStyle(fontSize: 32),
-                              ),
+                            Text(
+                              "設定を変更する",
+                              style:
+                                  TextStyle(fontSize: 32, color: Colors.black),
                             ),
-                          ),
-                        ]))),
+                          ]))),
+            ),
 
             // Container(
             //     child: row(
