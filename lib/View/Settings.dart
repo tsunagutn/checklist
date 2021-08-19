@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:checklist/Model/SettingsModel.dart';
 
-import 'Menu.dart';
-
 class Settings extends StatefulWidget {
   Settings({Key? key}) : super(key: key);
 
