@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SettingsModel {
   String text;
-  //コンストラクタ
+  //コンストラクタあ
   SettingsModel({
     required this.text,
   });
