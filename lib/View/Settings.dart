@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:checklist/Model/SettingsModel.dart';
+import 'package:checklist/View/DrawerItem.dart';
 
 class Settings extends StatefulWidget {
   Settings({Key? key}) : super(key: key);
@@ -47,7 +48,7 @@ class _SettingsState extends State<Settings> {
             },
           ),
         ),
-        endDrawer: Drawer(child: Center(child: Text("Drawer"))),
+        endDrawer: DrawerItem(),
         // 背景色
         //backgroundColor: Colors.teal[50],
         body: Column(children: <Widget>[

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:checklist/View/DrawerItem.dart';
+
 class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,28 +11,7 @@ class Menu extends StatelessWidget {
           Text("メインメニュー"),
         ]),
       ),
-      endDrawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            Container(
-                height: 60,
-                child: const DrawerHeader(
-                  child: Text('チェックリストAP'),
-                  decoration: BoxDecoration(
-                    color: Color(0xffE7E7E7),
-                  ),
-                )),
-            ListTile(
-              title: Text("利用規約"),
-              trailing: Icon(Icons.arrow_forward_ios),
-            ),
-            ListTile(
-              title: Text("バージョン"),
-              trailing: Text("0.0.1"),
-            ),
-          ],
-        ),
-      ),
+      endDrawer: DrawerItem(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
