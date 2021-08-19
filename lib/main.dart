@@ -6,6 +6,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:checklist/View/Menu.dart';
 import 'package:checklist/View/Settings.dart';
+import 'package:checklist/View/Term.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (_) => Menu(),
         '/settings': (_) => Settings(),
+        '/term': (_) => Term(),
       },
       //home: MyHomePage(title: 'チェックリスト'),
     );

@@ -17,6 +17,10 @@ class DrawerItem extends StatelessWidget {
           ListTile(
             title: Text("利用規約"),
             trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () async {
+              Navigator.of(context).pop();
+              final result = await Navigator.of(context).pushNamed('/term');
+            },
           ),
           ListTile(
             title: Text("バージョン"),
