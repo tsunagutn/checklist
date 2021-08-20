@@ -8,12 +8,12 @@ const RESOURCES = {
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/NOTICES": "ec675184c86faf9aec51ede1170a0192",
+"assets/NOTICES": "5d8e7a7d86772fd03a85e97d23acaa3a",
 "assets/AssetManifest.json": "2efbb41d7877d10aac9d091f58ccd7b9",
-"index.html": "99c52b8419efe897a888ed0a236eb649",
-"/": "99c52b8419efe897a888ed0a236eb649",
+"index.html": "a30f1fcab75d651bc86376f18e7f6e8e",
+"/": "a30f1fcab75d651bc86376f18e7f6e8e",
 "manifest.json": "7551f038b9158b014a6d1ae34dece653",
-"main.dart.js": "d1d149973ee100770580664f728a2734",
+"main.dart.js": "e1b0581da3efc47eb62296fd9ae1ea00",
 "version.json": "06e8397c27111a072354fbe4a7ddd3ff",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796"
 };
