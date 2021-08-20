@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/': (_) => Menu(),
         '/settings': (_) => Settings(),
         '/term': (_) => Term(),
+        '/checktest': (_) => Term(),
       },
       //home: MyHomePage(title: 'チェックリスト'),
     );

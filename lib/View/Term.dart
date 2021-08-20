@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:checklist/Model/TermModel.dart';
 import 'package:checklist/View/DrawerItem.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
+
 class Term extends StatefulWidget {
   Term({Key? key}) : super(key: key);
 
@@ -17,7 +19,35 @@ class _TermState extends State<Term> {
   bool _check = false;
   late DateTime _checkdate;
 
-  void _termCheck(bool e) {}
+  //同意するボタン押下時の処理
+  void _termCheck(bool e) async {
+    if (_check) {
+      openDialog(context, '既に同意済みです。');
+      return;
+    }
+    setState(() {
+      _check = e;
+    });
+    if (e) {
+      _checkdate = DateTime.now();
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setBool("termcheck", true);
+    }
+  }
+
+  //これを画面表示時にじっこうせねばならぬ
+  void testtest() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool termcheck = false;
+    if (prefs.getKeys().contains('termcheck')) {
+      termcheck = prefs.getBool("termcheck")!;
+    }
+    if (termcheck) {
+      setState(() {
+        _check = termcheck;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,19 +75,44 @@ class _TermState extends State<Term> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
               Text("あいうえおです\nかきくけこ"),
+              TextButton(
+                onPressed: testtest,
+                child: Text(
+                  'てすとです',
+                  style: TextStyle(color: Colors.white, fontSize: 20.0),
+                ),
+              ),
               CheckboxListTile(
-                  activeColor: Colors.blue,
-                  title: Text('同意する'),
-                  controlAffinity: ListTileControlAffinity.leading,
-                  value: _check,
-                  onChanged: (e) {
-                    setState(() {
-                      _check = e!;
-                      if (e) {
-                        _checkdate = DateTime.now();
-                      }
-                    });
-                  })
+                activeColor: Colors.blue,
+                title: Text('同意するよ'),
+                controlAffinity: ListTileControlAffinity.leading,
+                value: _check,
+                onChanged: (value) => _termCheck(value!),
+              ),
             ])));
   }
+
+  //ダイアログ表示？？？共通化した方がよいかもしれない
+  void openDialog(BuildContext context, String message) {
+    showDialog<Answers>(
+      context: context,
+      builder: (BuildContext context) => new SimpleDialog(
+        title: new Text(message),
+        children: <Widget>[
+          createDialogOption(context, Answers.OK, 'OK'),
+        ],
+      ),
+    );
+  }
+
+  createDialogOption(BuildContext context, Answers answer, String str) {
+    return new SimpleDialogOption(
+      child: new Text(str),
+      onPressed: () {
+        Navigator.pop(context, answer);
+      },
+    );
+  }
 }
+
+enum Answers { OK }

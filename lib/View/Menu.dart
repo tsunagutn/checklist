@@ -27,8 +27,9 @@ class Menu extends StatelessWidget {
               child: InkWell(
                   splashColor: Colors.blue.withAlpha(30),
                   borderRadius: BorderRadius.circular(30),
-                  onTap: () {
-                    print('Card tapped.');
+                  onTap: () async {
+                    final result =
+                        await Navigator.of(context).pushNamed('/checktest');
                   },
                   child: Container(
                       margin: const EdgeInsets.all(10.0),
