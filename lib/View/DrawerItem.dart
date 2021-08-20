@@ -15,7 +15,7 @@ class DrawerItem extends StatelessWidget {
                 ),
               )),
           ListTile(
-            title: Text("利用規約a"),
+            title: Text("利用規約"),
             trailing: Icon(Icons.arrow_forward_ios),
             onTap: () async {
               Navigator.of(context).pop();
